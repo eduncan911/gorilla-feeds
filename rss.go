@@ -98,7 +98,7 @@ func newRssItem(i *Item) *RssItem {
 	intLength, err := strconv.ParseInt(i.Link.Length, 10, 64)
 
 	if err == nil && (intLength > 0 || i.Link.Type != "") {
-		item.Enclosure = &RssEnclosure{Url: i.Link.Href, Type: i.Link.Type, Length: i.Link.Length}
+		item.Enclosure = &RssEnclosure{Url: i.Link.AudioHref, Type: i.Link.Type, Length: i.Link.Length}
 	}
 	if i.Author != nil {
 		item.Author = i.Author.Name

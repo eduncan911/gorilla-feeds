@@ -45,9 +45,9 @@ var atomOutput = `<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.
   <entry>
     <title>Never Gonna Give You Up Mp3</title>
     <updated>2013-01-16T21:52:35-05:00</updated>
-    <id>tag:example.com,2013-01-16:/RickRoll.mp3</id>
+    <id>tag:example.com,2013-01-16:/RickRoll.html</id>
     <content type="html">Never gonna give you up - Never gonna let you down.</content>
-    <link href="http://example.com/RickRoll.mp3" rel="enclosure" type="audio/mpeg" length="123456"></link>
+    <link href="http://example.com/RickRoll.html" rel="enclosure" type="audio/mpeg" length="123456"></link>
   </entry>
   <entry>
     <title>String formatting in Go</title>
@@ -87,7 +87,7 @@ var rssOutput = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0">
     </item>
     <item>
       <title>Never Gonna Give You Up Mp3</title>
-      <link>http://example.com/RickRoll.mp3</link>
+      <link>http://example.com/RickRoll.html</link>
       <description>Never gonna give you up - Never gonna let you down.</description>
       <enclosure url="http://example.com/RickRoll.mp3" length="123456" type="audio/mpeg"></enclosure>
       <pubDate>Wed, 16 Jan 2013 21:52:35 -0500</pubDate>
@@ -140,7 +140,7 @@ func TestFeed(t *testing.T) {
 		},
 		{
 			Title:       "Never Gonna Give You Up Mp3",
-			Link:        &Link{Href: "http://example.com/RickRoll.mp3", Length: "123456", Type: "audio/mpeg"},
+			Link:        &Link{Href: "http://example.com/RickRoll.html", AudioHref: "http://example.com/RickRoll.mp3", Length: "123456", Type: "audio/mpeg"},
 			Description: "Never gonna give you up - Never gonna let you down.",
 			Created:     now,
 		},
